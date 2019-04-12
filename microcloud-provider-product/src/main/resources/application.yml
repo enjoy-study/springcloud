@@ -1,15 +1,19 @@
 server:
   port: 8080
+  servlet:
+    context-path: /microcloud-provider-product #设置访问工程名
 mybatis:
   mapper-locations: #mapper映射文件
     classpath:mapping/*.xml
 spring:
+  application:
+    name: microcloud-provider-product
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource;
-    driver-class-name: com.mysql.cj.jdbc.Driver;
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/xiangxue?serverTimezone=GMT%2B8
     username: root
     password: mysql
 logging:
   level:
-    com.bill.mapper:debug
+    com.bill.mapper: debug

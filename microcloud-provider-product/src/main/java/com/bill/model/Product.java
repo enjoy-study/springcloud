@@ -30,13 +30,4 @@ public class Product extends BaseEntity {
     public void setProductDesc(String productDesc) {
         this.productDesc = productDesc;
     }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "prodcutId=" + prodcutId +
-                ", productName='" + productName + '\'' +
-                ", productDesc='" + productDesc + '\'' +
-                '}';
-    }
 }

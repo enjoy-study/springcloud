@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bill.mapper.ProductMapper">
-  <resultMap id="BaseResultMap" type="com.bill.model.Product">
-    <id column="prodcut_id" jdbcType="BIGINT" property="prodcutId" />
-    <result column="product_name" jdbcType="VARCHAR" property="productName" />
-    <result column="product_desc" jdbcType="VARCHAR" property="productDesc" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bill.mapper.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.bill.model.Product" >
+    <id column="prodcut_id" property="prodcutId" jdbcType="BIGINT" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="product_desc" property="productDesc" jdbcType="VARCHAR" />
   </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from product
     where prodcut_id = #{prodcutId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.bill.model.Product">
-    <selectKey keyProperty="prodcutId" order="BEFORE" resultType="java.lang.Long">
+  <insert id="insert" parameterType="com.bill.model.Product" >
+    <selectKey resultType="java.lang.Long" keyProperty="prodcutId" order="BEFORE" >
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into product (prodcut_id, product_name, product_desc
@@ -19,85 +19,19 @@
     values (#{prodcutId,jdbcType=BIGINT}, #{productName,jdbcType=VARCHAR}, #{productDesc,jdbcType=VARCHAR}
       )
   </insert>
-  <update id="updateByPrimaryKey" parameterType="com.bill.model.Product">
+  <update id="updateByPrimaryKey" parameterType="com.bill.model.Product" >
     update product
     set product_name = #{productName,jdbcType=VARCHAR},
       product_desc = #{productDesc,jdbcType=VARCHAR}
     where prodcut_id = #{prodcutId,jdbcType=BIGINT}
   </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select prodcut_id, product_name, product_desc
     from product
     where prodcut_id = #{prodcutId,jdbcType=BIGINT}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
+  <select id="selectAll" resultMap="BaseResultMap" >
     select prodcut_id, product_name, product_desc
-    from product
-  </select>
-  <resultMap id="BaseResultMap" type="com.bill.model.Product">
-    <id column="prodcutId" jdbcType="BIGINT" property="prodcutid" />
-    <result column="productName" jdbcType="VARCHAR" property="productname" />
-    <result column="productDesc" jdbcType="VARCHAR" property="productdesc" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from product
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.bill.model.Product">
-    <selectKey keyProperty="prodcutid" order="BEFORE" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into product (prodcutId, productName, productDesc
-      )
-    values (#{prodcutid,jdbcType=BIGINT}, #{productname,jdbcType=VARCHAR}, #{productdesc,jdbcType=VARCHAR}
-      )
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.bill.model.Product">
-    update product
-    set productName = #{productname,jdbcType=VARCHAR},
-      productDesc = #{productdesc,jdbcType=VARCHAR}
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select prodcutId, productName, productDesc
-    from product
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select prodcutId, productName, productDesc
-    from product
-  </select>
-  <resultMap id="BaseResultMap" type="com.bill.model.Product">
-    <id column="prodcutId" jdbcType="BIGINT" property="prodcutid" />
-    <result column="productName" jdbcType="VARCHAR" property="productname" />
-    <result column="productDesc" jdbcType="VARCHAR" property="productdesc" />
-  </resultMap>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from product
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="com.bill.model.Product">
-    <selectKey keyProperty="prodcutid" order="BEFORE" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into product (prodcutId, productName, productDesc
-      )
-    values (#{prodcutid,jdbcType=BIGINT}, #{productname,jdbcType=VARCHAR}, #{productdesc,jdbcType=VARCHAR}
-      )
-  </insert>
-  <update id="updateByPrimaryKey" parameterType="com.bill.model.Product">
-    update product
-    set productName = #{productname,jdbcType=VARCHAR},
-      productDesc = #{productdesc,jdbcType=VARCHAR}
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </update>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select prodcutId, productName, productDesc
-    from product
-    where prodcutId = #{prodcutid,jdbcType=BIGINT}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select prodcutId, productName, productDesc
     from product
   </select>
 </mapper>
