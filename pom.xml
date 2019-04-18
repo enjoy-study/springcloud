@@ -11,6 +11,8 @@
     <modules>
         <module>microcloud-api</module>
         <module>microcloud-provider-product</module>
+        <module>microcloud-consumer</module>
+        <module>microcloud-security</module>
     </modules>
 
     <properties>
@@ -48,6 +50,11 @@
             <dependency>
                 <groupId>com.bill</groupId>
                 <artifactId>microcloud-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.bill</groupId>
+                <artifactId>microcloud-security</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>

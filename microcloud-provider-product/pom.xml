@@ -36,9 +36,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <!-- 访问授权 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.bill</groupId>
             <artifactId>microcloud-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bill</groupId>
+            <artifactId>microcloud-security</artifactId>
         </dependency>
     </dependencies>
 
