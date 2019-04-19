@@ -23,3 +23,22 @@ spring:
 logging:
   level:
     com.bill.mapper: debug
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+    instance:
+      instance-id: microcloud-provider-product
+      prefer-ip-address : true
+      lease-renewal-interval-in-seconds: 2 # 设置心跳时间间隔（默认30s）
+      lease-expiration-duration-in-secondes: 5 # 如果现在超过5秒的间隔就清理（默认是90s）
+
+#监控信息
+info:
+  app.name: microcloud-provider-product
+  company.name: bill
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+
+#心跳检查
