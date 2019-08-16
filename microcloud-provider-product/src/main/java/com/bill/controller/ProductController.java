@@ -2,6 +2,7 @@ package com.bill.controller;
 
 import com.bill.model.Product;
 import com.bill.service.impl.IProductService;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,6 +13,9 @@ public class ProductController {
 
     @Resource
     private IProductService productService;
+
+    @Resource
+    private DiscoveryClient client;
 
     @RequestMapping(value = "get/{id}")
     public Object get(@PathVariable("id") long id) {
@@ -28,4 +32,8 @@ public class ProductController {
         return productService.add(product);
     }
 
+    @RequestMapping("/discover")
+    public Object discover() { //直接返回发现服务信息
+        return this.client;
+    }
 }

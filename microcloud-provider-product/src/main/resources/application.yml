@@ -7,7 +7,7 @@ mybatis:
     classpath:mapping/*.xml
 spring:
   application:
-    name: microcloud-provider-product
+    name: microcloud-provider-product  # 微服务名字对应Eureka里的application名字
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,9 +27,10 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://admin:enjoy@localhost:7001/eureka
     instance:
-      instance-id: microcloud-provider-product
+      instance-id: microcloud-provider-product #对应Eureka里status列标识
       prefer-ip-address : true
       lease-renewal-interval-in-seconds: 2 # 设置心跳时间间隔（默认30s）
       lease-expiration-duration-in-secondes: 5 # 如果现在超过5秒的间隔就清理（默认是90s）

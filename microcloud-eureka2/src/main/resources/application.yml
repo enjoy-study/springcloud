@@ -1,11 +1,11 @@
 server:
-  port: 7001
+  port: 7002
 eureka:
     instance: #eureka实例定义
-        hostname: eureka1 #定义eureka实例所在主机名称
+        hostname: eureka2 #定义eureka实例所在主机名称
     client: #作为客户端配置
       fetch-registry: false #是否要从eureka中获取注册信息
-      register-with-eureka: false #是否要注册到eureka
+      register-with-eureka: true #是否要注册到eureka
       service-url:
         defaultZone: http://admin:enjoy@eureka1:7001/eureka,http://admin:enjoy@eureka2:7002/eureka,http://admin:enjoy@eureka3:7003/eureka
     server: #作为服务端配置
